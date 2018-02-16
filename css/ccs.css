@@ -48,11 +48,11 @@ nav a:hover {
 
 }
 /*Main*/
-img {
+.pic {
     
     height: 100%;
 }
-.id {
+#id {
     float: left;
     height: 150px;
 }
