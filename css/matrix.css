@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*Main elements*/
+body {
+    background-image: url(../images/bodybg.png);
+    font-family: Consolas;
+}
+
+h1, h2, h3, ul, li, p, a{
+    color: #4C3;
+}
+/*Header*/
+header{
+    height: 60px;
+    width: 100%;
+    background-image: url(../images/bodybg_g.png);
+}
+nav ul{
+    padding:20px 10%;
+    float: right;
+    margin: auto;
+    list-style: none;  
+    text-transform: uppercase;
+}
+
+nav li {
+    font-size: 20px;
+    display: inline;
+    padding: 10px;
+    text-transform: uppercase;
+
+}
+
+nav a { 
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: right;
+    color: #4c3
+
+}
+nav a:hover { 
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: right;
+    color:darkgrey;
+
+}
+/*Main*/
+.pic {
+    
+    height: 100%;
+}
+#id {
+    float: left;
+    height: 150px;
+}
+/*Footer*/
