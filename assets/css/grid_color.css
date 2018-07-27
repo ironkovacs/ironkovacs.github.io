@@ -21,7 +21,20 @@
 html {
   margin: 0;
   padding: 0;
-  font-family: FiraCode-Medium;
+  font-size: 18px;
+  font-family: 'FiraCode-Light'
+}
+
+h1 {
+  padding: 0.5em 0;
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+
+h2{
+  padding: 0.3em 0;
+  font-size: 1.2em;
+  text-transform: capitalize
 }
 
 body {
