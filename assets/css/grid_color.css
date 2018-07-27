@@ -1,28 +1,94 @@
 @font-face {
   font-family: "FiraCode-Regular";
-  src: url(https://github.com/tonsky/FiraCode/raw/master/distr/woff2/FiraCode-Regular.woff2);
+  src: url(https://ironkovacs.github.io/assets/fonts/FiraCode-Regular.woff2);
 }
 
 @font-face {
   font-family: "FiraCode-Light";
-  src: url(https://github.com/tonsky/FiraCode/raw/master/distr/woff2/FiraCode-Light.woff2);
+  src: url(https://ironkovacs.github.io/assets/fonts/FiraCode-Light.woff2);
 }
 
 @font-face {
   font-family: "FiraCode-Bold";
-  src: url(https://github.com/tonsky/FiraCode/raw/master/distr/woff2/FiraCode-Bold.woff2);
+  src: url(https://ironkovacs.github.io/assets/fonts/FiraCode-Bold.woff2);
 }
 
 @font-face {
   font-family: "FiraCode-Medium";
-  
-  src: url(https://github.com/tonsky/FiraCode/raw/master/distr/woff2/FiraCode-Medium.woff2);
+  src: url(https://ironkovacs.github.io/assets/fonts/FiraCode-Medium.woff2);
 }
 
-
-
-html, body {
+html {
   margin: 0;
   padding: 0;
   font-family: FiraCode-Medium;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-gap: 5px;
+  grid-template: 
+  ' header header header header header header header header header header header header ' 1fr 
+  ' . . pic pic title title title title title title . . ' 1fr 
+  ' . . pic pic title title title title title title . . ' 1fr 
+  ' . . pic pic . . . . . . . . ' 1fr 
+  ' . . pic pic . . . . . . . . ' 1fr 
+  ' . . welcome_nav welcome_nav . cv_nav cv_nav . bio_nav bio_nav projects . ' 1fr 
+  ' . . . . . . . . . . projects . ' 1fr 
+  ' . . article article article article article article article article projects . ' 1fr 
+  ' . . article article article article article article article article projects . ' 1fr 
+  ' . . article article article article article article article article projects . ' 1fr 
+  ' . . article article article article article article article article projects . ' 1fr 
+  ' . . article article article article article article article article projects . ' 1fr 
+  ' . . article article article article article article article article projects . ' 1fr 
+  ' . . article article article article article article article article projects . ' 1fr 
+  ' . . . . . . . . . . . . ' 1fr 
+  ' contact_nav1 contact_me github_nav linkedin_nav gplus_nav spoti_nav steam_nav contact_nav contact_nav contact_nav contact_nav . ' 1fr 
+  ' . . . . . . . . . . . . ' 1fr 
+  ' footer footer footer footer footer footer footer footer footer footer footer footer ' 1fr 
+  / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+header {
+  grid-area: header;
+}
+
+.pic {
+  grid-area: pic;
+  width: 100%;
+}
+
+title {
+  grid-area: title;
+  width: 100%;
+  height: 100%;
+}
+
+.welcome_nav {
+  grid-area: welcome_nav;
+  width: 100%;
+  height: 100%;
+}
+
+.cv_nav {
+  grid-area: cv_nav;
+  width: 100%;
+  height: 100%;
+}
+
+.bio_nav {
+  grid-area: bio_nav;
+  width: 100%;
+  height: 100%;
+}
+
+#active_article {
+  grid-area: article;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden_article {
+  display: none
 }
