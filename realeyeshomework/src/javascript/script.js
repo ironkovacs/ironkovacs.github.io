@@ -132,6 +132,10 @@ fromValue.addEventListener('keyup', () => {
   recalculate()
 });
 
+fromValue.addEventListener('change', () => {
+  recalculate()
+});
+
 fromSelect.addEventListener('change', () => {
   activeCurrencies['from'] = { [fromSelect.value]: latestCurrencyRates[fromSelect.value] }
   excFrom = activeCurrencies.from[fromSelect.value];
