@@ -38,7 +38,7 @@ xhttp.onreadystatechange = function () {
     console.log('latest: ', latestCurrencyRates);
   };
 };
-xhttp.open("GET", "http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml", true);
+xhttp.open("GET", "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml", true);
 xhttp.send();
 
 const xmlToJson = (xml) => { // Modified version from here: http://davidwalsh.name/convert-xml-json
