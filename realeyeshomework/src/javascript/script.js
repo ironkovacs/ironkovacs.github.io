@@ -187,5 +187,5 @@ toCurrency.addEventListener('change', () => {
 
 window.addEventListener('resize', () => { renderChart() });
 
-xhttp.open("GET", "https://crossorigin.me/http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml", true);
+xhttp.open("GET", "http://thingproxy.freeboard.io/fetch/http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml", true);
 xhttp.send();
