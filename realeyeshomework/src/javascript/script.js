@@ -1,45 +1,36 @@
 const fromValue = document.querySelector('#from-value');
-const fromSelect = document.querySelector('#from-select');
+const fromCurrency = document.querySelector('#from-select');
 const toValue = document.querySelector('#to-value');
-const toSelect = document.querySelector('#to-select');
+const toCurrency = document.querySelector('#to-select');
 const latestDate = document.querySelector('#latest');
+const chartContainer = document.querySelector("#chart_container");
 
 const xhttp = new XMLHttpRequest();
 
-let latestCurrencyRates = new Object;
 let activeCurrencies = {
-  from: { EUR: 1 }, to: { EUR: 1 }
+  from: { currency: 'EUR', rate: 1 },
+  to: { currency: 'EUR', rate: 1 },
+  exchRate: 1
 }
 
-let activeCurrenciesHistory = [];
+let lofasz;
 let xmlDoc;
-let excFrom = 1;
-let excTo = 1;
-let excValue = (fromValue.value / excFrom * excTo)
+let data
+let jsonObj;
 
 xhttp.onreadystatechange = function () {
-
   if (this.readyState == 4 && this.status == 200) {
     xmlDoc = this.responseXML;
     jsonObj = xmlToJson(xmlDoc).NODE.Cube.Cube;
 
-    getLatestCurrencyRates()
     recalculate()
-    appendDOM(fromSelect);
-    appendDOM(toSelect);
+    appendDOM(fromCurrency);
+    appendDOM(toCurrency);
 
-
-    excFrom = activeCurrencies.from[fromSelect.value];
-    excTo = activeCurrencies.to[toSelect.value];
-
-    latestDate.innerText = jsonObj[0].time
-
-    console.log('JSON: ', jsonObj[0]);
-    console.log('latest: ', latestCurrencyRates);
+    latestDate.innerText = jsonObj[0].time;
+    data = getActiveCurrencyHistory()
   };
 };
-xhttp.open("GET", "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml", true);
-xhttp.send();
 
 const xmlToJson = (xml) => { // Modified version from here: http://davidwalsh.name/convert-xml-json
 
@@ -90,67 +81,111 @@ const appendDOM = (domElement) => {
     option.appendChild(currency)
     domElement.appendChild(option)
   }
-}
+};
 
-const getLatestCurrencyRates = () => {
-  for (let i = 0; i < jsonObj[0].Cube.length; i++) {
-    latestCurrencyRates[`${jsonObj[0].Cube[i].currency}`] = jsonObj[0].Cube[i].rate
+const getActiveCurrencyHistory = () => {
+  let history = [];
+
+  for (let i = 0; i < jsonObj.length; i++) {
+    history.push(
+      {
+        'from': {
+          x: getTimestamp(jsonObj[i].time),
+          y: Number(getRate(activeCurrencies.from.currency, jsonObj, i))
+        },
+
+        'to': {
+          x: getTimestamp(jsonObj[i].time),
+          y: Number(getRate(activeCurrencies.to.currency, jsonObj, i))
+        },
+      }
+    )
   }
-  latestCurrencyRates['EUR'] = '1';
-}
+  return history
+};
 
 const recalculate = () => {
-  excValue = (fromValue.value / excFrom * excTo);
-  toValue.innerText = finantial(excValue)
-}
+  if (toCurrency.innerText == 'EUR') {
+    activeCurrencies.to.currency = 'EUR';
+    activeCurrencies.to.rate = '1';
+  }
+  activeCurrencies.exchRate = (fromValue.value / activeCurrencies.from.rate * activeCurrencies.to.rate);
+  toValue.innerText = finantial(activeCurrencies.exchRate);
+
+
+};
 
 const finantial = (n) => {
   return Number.parseFloat(n).toFixed(2);
-}
+};
 
-const getActiveCurrencyHistory = () => {
-  let fromHistory = [];
-  let toHistory = [];
-  if(activeCurrencies)
-  for (let i = 0; i < jsonObj.length; i++) {
-    fromHistory.push(
-      {
-        x: getTimestamp(jsonObj[i].time),
-        y: jsonObj[i].Cube
-      }
-
-    )
-  }
-
-}
+const getRate = (currency, arr, i) => {
+  let rate = "";
+  arr[i].Cube.forEach(e => {
+    if (e.currency == currency) {
+      rate = e.rate;
+    };
+  });
+  return rate;
+};
 
 const getTimestamp = (date) => {
   return Math.floor(new Date(date).getTime() / 1000)
 }
 
+const getData = (prefix) => {
+  recalculate();
+  data = getActiveCurrencyHistory()
+  let arr = [];
+  if (prefix == 'from' || prefix == 'to') {
+    for (let i = data.length; i > 0; i--) {
+      arr.push(data[i - 1][prefix])
+    }
+    return arr
+  } else if (prefix == 'exc') {
+    for (let i = data.length; i > 0; i--) {
+      arr.push(
+        {
+          x: data[i - 1].from.x,
+          y: Number(data[i - 1].to.y / data[i - 1].from.y)
+        }
+      )
+    }
+    return arr
+  }
+};
+
 fromValue.addEventListener('keyup', () => {
-  recalculate()
+  recalculate();
+  getActiveCurrencyHistory();
 });
 
 fromValue.addEventListener('change', () => {
-  recalculate()
+  recalculate();
+  getActiveCurrencyHistory();
 });
 
-fromSelect.addEventListener('change', () => {
-  activeCurrencies['from'] = { [fromSelect.value]: latestCurrencyRates[fromSelect.value] }
-  excFrom = activeCurrencies.from[fromSelect.value];
-  recalculate()
+fromCurrency.addEventListener('change', () => {
+  if (fromCurrency.value == 'EUR') {
+    activeCurrencies['from'] = { currency: 'EUR', rate: 1 }
+  } else {
+    activeCurrencies['from'] = { currency: fromCurrency.value, rate: getRate(fromCurrency.value, jsonObj, 0) }
+  }
+  recalculate();
+  renderChart();
 });
 
-toSelect.addEventListener('change', () => {
-  activeCurrencies['to'] = { [toSelect.value]: latestCurrencyRates[toSelect.value] }
-  excTo = activeCurrencies.to[toSelect.value];
-  recalculate()
+toCurrency.addEventListener('change', () => {
+  if (toCurrency.value == 'EUR') {
+    activeCurrencies['to'] = { currency: 'EUR', rate: 1 }
+  } else {
+    activeCurrencies['to'] = { currency: toCurrency.value, rate: getRate(toCurrency.value, jsonObj, 0) }
+  }
+  recalculate();
+  renderChart();
 });
 
+window.addEventListener('resize', () => { renderChart() });
 
-
-
-
-
-
+xhttp.open("GET", "https://crossorigin.me/http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml", true);
+xhttp.send();

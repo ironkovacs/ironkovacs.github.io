@@ -25,19 +25,19 @@
     <table class="exchange">
       <thead>
         <tr>
-          <td>From</td>
-          <td>To</td>
+          <td class="from">From</td>
+          <td class="to">To</td>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
-            <select name="curr-from" id="from-select">
+            <select name="curr-from" class="from" id="from-select">
               <option>EUR</option>
             </select>
           </td>
           <td>
-            <select name="curr-to" id="to-select">
+            <select name="curr-to" class="to" id="to-select">
               <option>EUR</option>
             </select>
           </td>
@@ -53,7 +53,12 @@
   </main>
   <div class="history">
     <h2>Exchange rate history of the chosen currencies</h2>
-    <div id="chart"></div> 
+    <div id="chart_container">
+      <div id="y_axis"></div>
+      <div id="chart"></div>
+    </div>
+    <div id="legend"></div>
+
   </div>
   <footer>
     <p>The reference rates are usually updated around 16:00 CET on every working day, except on TARGET closing days. They are
