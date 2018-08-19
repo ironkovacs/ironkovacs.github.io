@@ -1,0 +1,14 @@
+{
+  "grey-blue": {
+    "primary": {
+      "main": "#8fa3ad",
+      "light": "#bfd4df",
+      "dark": "#61747e"
+    },
+    "secondary": {
+      "main": "#00B0FF",
+      "light": "#69e2ff",
+      "dark": "#0081cb"
+    }
+  }
+}

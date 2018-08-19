@@ -1,0 +1,51 @@
+.modules{
+  background-color: #1E1D1E;
+}
+
+
+.circle-container {
+  position: relative;
+  width: 20em;
+  height: 20em;
+  padding: 0;
+  border: solid 2px #fff;
+  border-radius: 50%;
+  margin: auto;
+  background-color: #1E1D1E;
+}
+.circle-container a {
+  display: block;
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 4em; height: 4em;
+  margin: -2.25em;
+}
+.circle-container img { display: block; width: 100%; }
+.circle1 { transform: rotate(270deg) translate(10em) rotate(90deg); border-radius: 25px}
+.circle2 { transform: rotate(310deg) translate(10em) rotate(50deg); }
+.circle3 { transform: rotate(350deg) translate(10em) rotate(10deg); }
+.circle4 { transform: rotate(30deg) translate(10em) rotate(330deg); }
+.circle5 { transform: rotate(70deg) translate(10em) rotate(290deg); }
+.circle6 { transform: rotate(110deg) translate(10em) rotate(250deg); }
+.circle7 { transform: rotate(150deg) translate(10em) rotate(210deg); }
+.circle8 { transform: rotate(190deg) translate(10em) rotate(170deg); }
+.circle9 { transform: rotate(230deg) translate(10em) rotate(130deg); }
+
+i.fa {
+  display: inline-block;
+  font-size: 2em;
+  border-radius: 50%;
+  border: 5px double #1E1D1E;
+  background-color: #fff;
+  padding: .5em .5em;
+  color: #C42026;
+  position: relative;
+  
+}
+
+i.fa:hover{
+  border: 5px double #1E1D1E;
+  background-color: #C42026;
+  color: #fff;
+}
+
