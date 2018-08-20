@@ -11,42 +11,166 @@ body {
 
 header {
   border: solid grey 1px;
-  width: 100%;
-  min-height: 5rem;
+  width: calc(100vw - 4rem);
   margin: auto;
   padding: 0 2rem 0 2rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  position: fixed;
+  background-color: #fff;
+  z-index: 1000;
 }
 
 .nav-logo {
-  height: 5rem;
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 4rem;
+  margin-left: 0;
 }
 
 .header-nav {
-  width: calc(100vw - 320px);
-  min-width: 520px;
-  float: left;
-  display: flex;
-}
-
-header ul {
+  max-width: 100vw;
   display: flex;
   justify-content: flex-end;
 }
 
-header li {
-  margin: 2rem 2rem 0 0;
-  display: inline;
+header a {
+  padding: 0.2rem;
+  margin: 1.5rem 0.3rem;
+  text-decoration: none;
+  color: black
+}
+
+header a:hover {
+  color: #C42026;
+}
+
+.trial {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: solid 2px;
+  border-radius: 3px;
+  color: #C42026;
+}
+
+.trial:hover {
+  border-color: black;
+  color: #fff;
+  background-color: #C42026
+}
+
+.login {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: solid 2px;
+  border-radius: 3px;
+}
+
+.login:hover {
+  border-color: black;
+  color: #fff;
+  background-color: #1E1D1E
+}
+
+.landing {
+  padding-top: 5rem;
+  background-image: url(/static/img/bg1.bmp);
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.landing>h1 {
+  text-align: center;
+  font-size: 3rem
+}
+
+.landing-wrapper {
+  margin: 2rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+iframe {
+  margin: auto;
+  min-width: 200px;
+  border: none;
+  padding: 0;
+}
+
+.landing-text-wrapper {
+  margin: auto;
+  text-align: justify;
+  width: calc(50vw - 4rem);
+  padding-bottom: 10px
+}
+
+.landing-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing-text-wrapper p {
+  margin-bottom: 2rem
+}
+
+.landing .button {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.landing .uppercase {
+  background-color: rgba(0, 255, 0, .2);
+}
+
+.landing a:hover {
+  border-color: black;
+  color: black;
+}
+
+.a .button {
+  text-align: center;
+  margin: auto;
+  font-size: 1.25rem;
+}
+
+p.under {
+  margin: auto;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  text-align: center
+}
+
+.features {
+  height: 100vh;
+  
 }
 
 .modules {
+  margin: auto;
+  height: 100vh;
   background-color: #1E1D1E;
+}
+
+.modules-wrapper {
+  padding: 1rem 10rem 10rem 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
 }
 
 .circle-container {
   position: relative;
-  width: 20em;
-  height: 20em;
+  width: 20rem;
+  height: 20rem;
   padding: 0;
   border: solid 2px #fff;
   border-radius: 50%;
@@ -59,60 +183,60 @@ header li {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 4em;
-  height: 4em;
-  margin: -2.25em;
+  width: 4rem;
+  height: 4rem;
+  margin: -2.25rem;
 }
 
 .circle-container img {
   display: block;
-  width: 100%;
+  width: 50vh;
 }
 
 .circle1 {
-  transform: rotate(270deg) translate(10em) rotate(90deg);
-  border-radius: 25px
+  transform: rotate(270deg) translate(10rem) rotate(90deg);
+  border-radius: 25px;
 }
 
 .circle2 {
-  transform: rotate(310deg) translate(10em) rotate(50deg);
+  transform: rotate(310deg) translate(10rem) rotate(50deg);
 }
 
 .circle3 {
-  transform: rotate(350deg) translate(10em) rotate(10deg);
+  transform: rotate(350deg) translate(10rem) rotate(10deg);
 }
 
 .circle4 {
-  transform: rotate(30deg) translate(10em) rotate(330deg);
+  transform: rotate(30deg) translate(10rem) rotate(330deg);
 }
 
 .circle5 {
-  transform: rotate(70deg) translate(10em) rotate(290deg);
+  transform: rotate(70deg) translate(10rem) rotate(290deg);
 }
 
 .circle6 {
-  transform: rotate(110deg) translate(10em) rotate(250deg);
+  transform: rotate(110deg) translate(10rem) rotate(250deg);
 }
 
 .circle7 {
-  transform: rotate(150deg) translate(10em) rotate(210deg);
+  transform: rotate(150deg) translate(10rem) rotate(210deg);
 }
 
 .circle8 {
-  transform: rotate(190deg) translate(10em) rotate(170deg);
+  transform: rotate(190deg) translate(10rem) rotate(170deg);
 }
 
 .circle9 {
-  transform: rotate(230deg) translate(10em) rotate(130deg);
+  transform: rotate(230deg) translate(10rem) rotate(130deg);
 }
 
 i.fa {
   display: inline-block;
-  font-size: 2em;
+  font-size: 2rem;
   border-radius: 50%;
   border: 5px double #1E1D1E;
   background-color: #fff;
-  padding: .5em .5em;
+  padding: .5rem .5rem;
   color: #C42026;
   position: relative;
 }
@@ -126,4 +250,11 @@ i.fa:hover {
 .logo {
   width: 224px;
   height: 112px;
+}
+
+h1 {
+  font-family: Impact, Helvetica, Arial, sans serif;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  padding: 1rem;
 }
