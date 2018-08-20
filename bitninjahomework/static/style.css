@@ -1,7 +1,47 @@
-.modules{
-  background-color: #1E1D1E;
+* {
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  width: 100vw;
+}
+
+header {
+  border: solid grey 1px;
+  width: 100%;
+  min-height: 5rem;
+  margin: auto;
+  padding: 0 2rem 0 2rem;
+  display: flex;
+}
+
+.nav-logo {
+  height: 5rem;
+}
+
+.header-nav {
+  width: calc(100vw - 320px);
+  min-width: 520px;
+  float: left;
+  display: flex;
+}
+
+header ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header li {
+  margin: 2rem 2rem 0 0;
+  display: inline;
+}
+
+.modules {
+  background-color: #1E1D1E;
+}
 
 .circle-container {
   position: relative;
@@ -13,23 +53,58 @@
   margin: auto;
   background-color: #1E1D1E;
 }
+
 .circle-container a {
   display: block;
   position: absolute;
-  top: 50%; left: 50%;
-  width: 4em; height: 4em;
+  top: 50%;
+  left: 50%;
+  width: 4em;
+  height: 4em;
   margin: -2.25em;
 }
-.circle-container img { display: block; width: 100%; }
-.circle1 { transform: rotate(270deg) translate(10em) rotate(90deg); border-radius: 25px}
-.circle2 { transform: rotate(310deg) translate(10em) rotate(50deg); }
-.circle3 { transform: rotate(350deg) translate(10em) rotate(10deg); }
-.circle4 { transform: rotate(30deg) translate(10em) rotate(330deg); }
-.circle5 { transform: rotate(70deg) translate(10em) rotate(290deg); }
-.circle6 { transform: rotate(110deg) translate(10em) rotate(250deg); }
-.circle7 { transform: rotate(150deg) translate(10em) rotate(210deg); }
-.circle8 { transform: rotate(190deg) translate(10em) rotate(170deg); }
-.circle9 { transform: rotate(230deg) translate(10em) rotate(130deg); }
+
+.circle-container img {
+  display: block;
+  width: 100%;
+}
+
+.circle1 {
+  transform: rotate(270deg) translate(10em) rotate(90deg);
+  border-radius: 25px
+}
+
+.circle2 {
+  transform: rotate(310deg) translate(10em) rotate(50deg);
+}
+
+.circle3 {
+  transform: rotate(350deg) translate(10em) rotate(10deg);
+}
+
+.circle4 {
+  transform: rotate(30deg) translate(10em) rotate(330deg);
+}
+
+.circle5 {
+  transform: rotate(70deg) translate(10em) rotate(290deg);
+}
+
+.circle6 {
+  transform: rotate(110deg) translate(10em) rotate(250deg);
+}
+
+.circle7 {
+  transform: rotate(150deg) translate(10em) rotate(210deg);
+}
+
+.circle8 {
+  transform: rotate(190deg) translate(10em) rotate(170deg);
+}
+
+.circle9 {
+  transform: rotate(230deg) translate(10em) rotate(130deg);
+}
 
 i.fa {
   display: inline-block;
@@ -40,12 +115,15 @@ i.fa {
   padding: .5em .5em;
   color: #C42026;
   position: relative;
-  
 }
 
-i.fa:hover{
+i.fa:hover {
   border: 5px double #1E1D1E;
   background-color: #C42026;
   color: #fff;
 }
 
+.logo {
+  width: 224px;
+  height: 112px;
+}
