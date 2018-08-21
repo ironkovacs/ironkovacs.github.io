@@ -290,36 +290,35 @@ i.fa:hover {
 .setup {
   margin: auto;
   text-align: center;
-  
-}
-.setup p{font-size: 1.5rem;
-padding-bottom: 1rem;
 }
 
-.setup img{
+.setup p {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.setup img {
   border-radius: 5px;
-
 }
 
 .setupfooter {
   position: relative;
   color: #fff;
   display: flex;
+  flex-wrap: wrap-reverse;
   padding-top: 2rem;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 6rem;
   background-color: #C42026;
 }
 
 .setupfooter-text {
-  position: absolute;
-  left: 10rem;
+  margin: 1rem;
 }
 
 .setupfooter-button {
-  position: absolute;
-  right: 10rem;
-  top: 3rem;
+  margin: 1rem;
+  padding-top: 1rem;
 }
 
 .logo {
@@ -327,54 +326,95 @@ padding-bottom: 1rem;
   height: 112px;
 }
 
-.story{
+.story {}
 
+.story h1 {
+  font-family: Segoe UI, sans sarif;
+  color: #C42026;
+  text-transform: uppercase;
 }
 
-.story-content{
+.story-nav {
+  text-align: center;
+  margin: auto;
+}
+
+button.story-nav {
+  height: 1rem;
+  width: 1rem;
+  color: #434343;
+  background-color: #434343;
+  border-radius: 1rem;
+  border: none;
+}
+
+button.story-nav.active {
+  background-color: #adadad;
+}
+
+.logo-story {
+  display: flex;
+  justify-content: center;
+}
+
+.text-story {
+  margin: 2rem;
+  display: flex;
+}
+
+.tex-story-container {
+  padding: 1rem;
+}
+
+.logo-story-content {
   display: none;
 }
 
-footer{
+.text-story-content {
+  display: none;
+  background-image: url(https://raw.githubusercontent.com/ironkovacs/ironkovacs.github.io/master/bitninjahomework/static/elements/page.png)
+}
+
+footer {
   background-color: #231F1E;
   background-image: url(https://raw.githubusercontent.com/ironkovacs/ironkovacs.github.io/master/bitninjahomework/static/img/bg2.jpg);
   background-repeat: no-repeat;
   background-size: 20rem;
   background-position-y: 2rem;
   height: 200px;
-  display:flex;
+  display: flex;
   justify-content: flex-end;
   padding-right: 10rem;
-  color:white;
+  color: white;
 }
 
-footer h2{
-  margin-top:2rem;
+footer h2 {
+  margin-top: 2rem;
   font-size: 1rem;
   color: #C42026;
   font-weight: normal;
   text-transform: capitalize;
 }
 
-footer a{
+footer a {
   text-decoration: none;
   color: #fff;
   text-transform: capitalize
 }
 
-footer a:hover{
+footer a:hover {
   color: #C42026;
 }
 
-footer ul{
+footer ul {
   padding-right: 2rem;
-  }
+}
 
 footer li {
   list-style: none;
 }
 
-footer i{
+footer i {
   color: #231F1E;
   display: block;
   font-size: 2rem;
@@ -383,10 +423,9 @@ footer i{
   border-radius: 50%;
 }
 
-footer i:hover{
+footer i:hover {
   background-color: #C42026;
 }
-
 
 h1 {
   font-family: Impact, Helvetica, Arial, sans serif;
@@ -399,5 +438,11 @@ h1 {
 @media only screen and (max-width: 1180px) {
   .circle-container {
     display: none;
+  }
+  ul.right {
+    padding: 1rem;
+  }
+  ul.left {
+    padding: 1rem;
   }
 }
