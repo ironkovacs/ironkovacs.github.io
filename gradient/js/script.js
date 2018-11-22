@@ -66,6 +66,11 @@ const createGradient = (from = [100, 100, 100, 1], to = [100, 100, 0, 1], level)
     colorTable.appendChild(box);
   }
 }
+inputLevel.addEventListener('change', ()=>{
+  colorTable.innerHTML = "";
+  createGradient( hexToHSL(inputFrom.value),  hexToHSL(inputTo.value), inputLevel.value)
+
+})
 
 buttonGenerate.addEventListener("click", () => {
   colorTable.innerHTML = "";
