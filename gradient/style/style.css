@@ -1,0 +1,14 @@
+#color {
+  width:  100vw;
+}
+
+.colorbox{
+  float: left;
+  height: 20px;
+  width: 125px;
+  border: solid black 1px;
+  margin: 1px;
+  font-size: 11px;
+
+  text-align: center;
+}
