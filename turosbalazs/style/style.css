@@ -1,0 +1,472 @@
+@font-face {
+  font-family: "AkzidenzGroteskPro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./../assets/fonts/AkzidenzGroteskPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AkzidenzGroteskPro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./../assets/fonts/AkzidenzGroteskPro-It.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AkzidenzGroteskPro";
+  font-style: bold;
+  font-weight: 800;
+  src: url("./../assets/fonts/AkzidenzGroteskPro-Super.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./../assets/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #010101;
+}
+
+main {
+  height: max-content;
+  display: flex;
+}
+
+main .left {
+  position: relative;
+  width: 14vw;
+  max-width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main .left .title {
+  font-family: AkzidenzGroteskPro;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.95;
+  letter-spacing: normal;
+  text-align: left;
+  color: #010101;
+}
+
+main .left .title .last-name {
+  text-transform: uppercase;
+}
+
+main .left .menu {
+  color: #111111;
+  font-family: "PlayfairDisplay";
+  text-transform: uppercase;
+  font-family: PlayfairDisplay;
+  font-size: 26px;
+  line-height: 36px;
+}
+
+main .left .menu ul {
+  list-style: none;
+}
+
+main .left .menu ul:hover,
+main .left .menu li:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+main .left .menu .works .works-list {
+  margin: 20px 0;
+  width: 183px;
+  font-family: AkzidenzGroteskPro;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: left;
+  color: #828282;
+}
+
+main .left .menu .works .works-list .active {
+  background-image: url(../assets/elements/works-line.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  cursor: default;
+  color: #828282 !important;
+}
+
+main .right .landing {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 125vh;
+  max-width: 80vw;
+  background-image: url("../img/index.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+  cursor: pointer;
+}
+
+main .right.portrait .gallery-element {
+  max-width: 45%;
+}
+
+main .right.landscape .gallery-element {
+  max-width: 30%;
+}
+
+main .right .gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+main .right .gallery .gallery-element {
+  cursor: pointer;
+  width: 100%;
+}
+
+main .right .gallery .gallery-element .gallery-img {
+  max-width: 90vw;
+  max-height: 400px;
+}
+
+main .right .single-gallery-wrapper {
+  position: relative;
+  height: 43vw;
+  width: 62.5vw;
+  max-width: 1200px;
+  max-height: 850px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+main .right .single-gallery-wrapper .caroussel img.single-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 55vw;
+  height: 43vw;
+  max-width: 1062px;
+  max-height: 850px;
+}
+
+main .right .single-gallery-wrapper .gallery-side {
+  width: 6.7vw;
+  height: 21vw;
+  max-width: 130px;
+  max-height: 425px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+main .right .single-gallery-wrapper .gallery-side .pager {
+  font-family: AkzidenzGroteskPro;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  text-align: right;
+  color: #828282;
+}
+
+main .right .single-gallery-wrapper .gallery-side .gallery-nav {
+  display: flex;
+  fill: #828282;
+}
+
+main .right .single-gallery-wrapper .gallery-side .gallery-nav .prev {
+  margin: 0 10px;
+  width: 8px;
+  height: 17px;
+  object-fit: contain;
+}
+
+main .right .single-gallery-wrapper .gallery-side .gallery-nav .prev:hover {
+  cursor: pointer;
+  fill: #010101;
+}
+
+main .right .single-gallery-wrapper .gallery-side .gallery-nav .next {
+  margin: 0 10px;
+  width: 8px;
+  height: 17px;
+  object-fit: contain;
+}
+
+main .right .single-gallery-wrapper .gallery-side .gallery-nav .next:hover {
+  cursor: pointer;
+  fill: #010101;
+}
+
+main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn {
+  margin: 0;
+  width: 30px;
+  height: 17px;
+  object-fit: contain;
+}
+
+main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hover {
+  cursor: pointer;
+  fill: #010101;
+}
+
+/* fades  */
+.invisible {
+  opacity: 0;
+  transition: linear 1s;
+}
+
+.visible {
+  opacity: 1;
+  transition: linear 1s;
+}
+
+@media screen {
+  #preloader {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+  }
+  #preloader img {
+    display: block;
+  }
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    margin: 4.5vw 0 0 2.9vw;
+  }
+  main .left {
+    width: 14vw;
+  }
+  main .right .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: tomato;
+  }
+  main .right .gallery .gallery-element {
+    width: 45%;
+    margin: auto;
+  }
+  main .right .gallery .gallery-element .gallery-img {
+    width: 26vw;
+    max-width: 500px;
+    max-height: 400px;
+  }
+  main .hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  main {
+    margin: 87px 0 0 0;
+  }
+  main .left {
+    padding-left: 55px;
+    width: 14vw;
+    height: calc(100vh - 120px);
+    max-height: 960px;
+  }
+  main .right {
+    width: 84vw;
+    max-width: 1600px;
+  }
+  main .right .landing {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 125vh;
+    max-width: 80vw;
+    background-image: url("../img/index.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top right;
+    cursor: pointer;
+  }
+  main .right .gallery {
+    overflow-x: auto;
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  main .right .gallery .gallery-element {
+    cursor: pointer;
+    width: 30%;
+    max-width: 500px;
+    margin: 0 2vw 2vw 0;
+    position: relative;
+  }
+  main .right .gallery .gallery-element:hover .gallery-title {
+    transition: opacity 0.1s linear;
+    opacity: 1;
+  }
+  main .right .gallery .gallery-element .gallery-img {
+    width: 26vw;
+    max-width: 500px;
+    max-height: 400px;
+  }
+  main .right .gallery .gallery-element .gallery-title {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    color: white;
+    font-family: "PlayfairDisplay";
+    font-size: 24px;
+    text-transform: uppercase;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+  }
+  main .right .gallery .gallery-element:hover .gallery-title {
+    display: block;
+  }
+  main .right .single-gallery-wrapper {
+    position: relative;
+    height: 43vw;
+    width: 62.5vw;
+    max-width: 1200px;
+    max-height: 850px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  main .right .single-gallery-wrapper .caroussel img.single-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 55vw;
+    height: 43vw;
+    max-width: 1062px;
+    max-height: 850px;
+  }
+  main .right .single-gallery-wrapper .gallery-side {
+    width: 6.7vw;
+    height: 21vw;
+    max-width: 130px;
+    max-height: 425px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+  }
+  main .right .single-gallery-wrapper .gallery-side .pager {
+    font-family: AkzidenzGroteskPro;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+    text-align: right;
+    color: #828282;
+  }
+  main .right .single-gallery-wrapper .gallery-side .gallery-nav {
+    display: flex;
+    fill: #828282;
+  }
+  main .right .single-gallery-wrapper .gallery-side .gallery-nav .prev {
+    margin: 0 10px;
+    width: 8px;
+    height: 17px;
+    object-fit: contain;
+  }
+  main .right .single-gallery-wrapper .gallery-side .gallery-nav .prev:hover {
+    cursor: pointer;
+    fill: #010101;
+  }
+  main .right .single-gallery-wrapper .gallery-side .gallery-nav .next {
+    margin: 0 10px;
+    width: 8px;
+    height: 17px;
+    object-fit: contain;
+  }
+  main .right .single-gallery-wrapper .gallery-side .gallery-nav .next:hover {
+    cursor: pointer;
+    fill: #010101;
+  }
+  main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn {
+    margin: 0;
+    width: 30px;
+    height: 17px;
+    object-fit: contain;
+  }
+  main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hover {
+    cursor: pointer;
+    fill: #010101;
+  }
+  main .right .bio-wrapper {
+    width: 69.8vw;
+    max-width: 1340px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main .right .bio-wrapper .bio-en {
+    order: 1;
+    font-family: PlayfairDisplay;
+    font-size: 28px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 37px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #000000;
+  }
+  main .right .bio-wrapper .bio-hu {
+    order: 3;
+    width: 40vw;
+    max-width: 763px;
+  }
+  main .right .bio-wrapper .bio-hu .bio-hu-text {
+    font-family: PlayfairDisplay;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 30px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #828282;
+  }
+  main .right .bio-wrapper .bio-img {
+    order: 2;
+    width: 26.46vw;
+    max-width: 500px;
+  }
+  main .right .bio-wrapper .bio-img img {
+    width: 100%;
+  }
+  main .hamburger {
+    display: none;
+  }
+}
